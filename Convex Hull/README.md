@@ -1,4 +1,4 @@
-Brute Force:
+Brute Force: O(N^3)
 
     for element1 - O(N)
   
@@ -6,9 +6,9 @@ Brute Force:
     
         calculate which side - O(N)
       
-  Total: O(N^3)
+
   
-Graham Scan:
+Graham Scan: O(NlogN)
 
     find bottom left - O(N)
   
@@ -16,8 +16,6 @@ Graham Scan:
   
     stack process - O(N)
   
-  Total: O(NlogN)
+
   
-Divide & Conquer:
-   
-  Total: O(NlogN)
+Divide & Conquer: O(NlogN)
