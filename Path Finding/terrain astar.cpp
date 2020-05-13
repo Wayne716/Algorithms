@@ -128,7 +128,23 @@ public:
 
 
 int main() {
-    std::vector<std::vector<char>> map
+    std::vector<std::vector<char>> map1
+            {{'O','O','O','O','O','O','O','O','O','O','O','O','O','O','O','O','O'},
+             {'O','O','O','O','O','O','O','O','O','O','O','O','O','O','O','O','O'},
+             {'O','O','O','O','O','O','O','O','O','O','O','O','O','O','O','O','O'},
+             {'O','O','O','O','O','O','O','O','O','O','O','O','O','O','O','O','O'},
+             {'O','O','O','O','O','O','O','O','O','O','O','O','O','O','O','O','O'},
+             {'O','O','O','O','O','O','X','O','O','O','O','O','O','O','O','O','O'},
+             {'O','O','O','O','O','O','X','O','O','O','O','O','O','O','O','O','O'},
+             {'O','O','O','O','O','O','O','X','O','O','O','O','O','O','O','O','O'},
+             {'O','O','O','A','O','O','O','X','O','O','O','O','O','O','O','O','O'},
+             {'O','O','O','O','O','O','O','X','X','O','O','O','O','O','B','O','O'},
+             {'O','O','O','O','O','O','O','O','X','O','O','O','O','O','O','O','O'},
+             {'O','O','O','O','O','O','O','O','X','O','O','O','O','O','O','O','O'},
+             {'O','O','O','O','O','O','O','O','O','O','O','O','O','O','O','O','O'},
+             {'O','O','O','O','O','O','O','O','O','O','O','O','O','O','O','O','O'}};
+
+    std::vector<std::vector<char>> map2
             {{'O','O','O','X','O','O','O','X','O','O','O','O','X','O','O','O','O','O','O','O','O','O','O','O','S','S','S','S','S','S','S','S','S','S','S','B','S','S','S','S'},
              {'O','O','O','O','O','O','O','X','O','O','O','O','X','O','O','O','O','O','O','O','O','O','O','O','O','S','S','S','S','S','S','S','S','S','W','S','S','S','S','S'},
              {'X','X','X','X','X','X','O','X','X','X','X','O','X','O','O','O','O','O','O','O','O','O','O','O','O','O','S','S','S','S','S','S','S','W','S','S','S','S','S','S'},
@@ -151,8 +167,15 @@ int main() {
              {'O','O','O','X','O','O','O','X','O','O','O','O','X','O','O','O','O','O','O','O','O','O','O','O','O','O','O','O','W','W','W','O','O','O','O','O','O','O','O','O'},
             };
 
-    PathFinding A(map);
+    PathFinding A(map1);
+    PathFinding B(map2);
+
     if (A.Find())
         A.visualize();
     else exit(-1);
+    std::cout << "\n\n";
+
+    if (B.Find())
+        B.visualize();
+    else exit(-2);
 }
