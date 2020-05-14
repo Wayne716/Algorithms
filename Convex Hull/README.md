@@ -19,3 +19,7 @@ Graham Scan: O(NlogN)
 
   
 Divide & Conquer: O(NlogN)
+    
+    sort in x - O(NlogN)
+    
+    recursion - T(N) = T(2/N) + O(N)
