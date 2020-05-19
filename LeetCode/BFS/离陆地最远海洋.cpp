@@ -1,4 +1,15 @@
-https://leetcode-cn.com/problems/as-far-from-land-as-possible/
+/*
+ * https://leetcode-cn.com/problems/as-far-from-land-as-possible
+ * 只要先把所有的陆地都入队，
+ * 然后从各个陆地同时开始一层一层的向海洋扩散，
+ * 那么最后扩散到的海洋就是最远的海洋！
+ * 并且这个海洋肯定是被离他最近的陆地给扩散到的！
+ * 10000 12002 12332 12332
+ * 00001 20021 23321 23321
+ * 00000 00002 30032 34432
+ * 00000 20000 23003 23443
+ * 10000 12000 12300 12344
+ */
 
 class Solution {
 public:
@@ -24,7 +35,7 @@ public:
                     continue;
                 if (grid[newX][newY] == 0) {
                     grid[newX][newY] = grid[x][y]+1;
-                    res = max(res, grid[newX][newY]);
+                    res = grid[newX][newY];
                     Q.push({newX, newY});
                 }
             }
