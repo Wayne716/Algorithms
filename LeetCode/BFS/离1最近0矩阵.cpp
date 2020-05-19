@@ -1,4 +1,12 @@
-// https://leetcode-cn.com/problems/01-matrix/
+/*
+ *  https://leetcode-cn.com/problems/01-matrix/
+ *  首先把每个源点 0 入队
+ *  然后从各个 0 同时开始一圈一圈的向 1 扩散
+ *  每个 1 都是被离它最近的 0 扩散到的
+ *  这里要注意先把 matrix 数组中 1 的位置设置成 -1
+ *  只要是个无效的距离值来标志这个位置的 1 没有被访问过就行辣~
+ */
+
 
 class Solution {
 public:
