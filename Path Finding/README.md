@@ -12,7 +12,7 @@
 ### Dijkstra /w priority_queue in STL
 ```
 初始化所有点的距离为无限大，起始点距离为0
-初始化bool数组visited
+初始化bool数组visited，默认为false
 用priority_queue存放pair<距离,到达点>，插入<0,start>
 
 当priority_queue非空时，取出队首节点为u，遍历邻接点v
