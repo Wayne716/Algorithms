@@ -11,26 +11,45 @@ int minDistance(int* distance, bool* visited) {
     return index;
 }
 
+int* parent;
+
+void printPath(int* parent, int i) {
+    if (parent[i] == -1) {
+        cout << i << ' ';
+        return;
+    }
+    printPath(parent, parent[i]);
+    cout << i << ' ';
+}
+
 void dijkstra(int graph[V][V], int start) {
     bool* visited = new bool[V];
     int* distance = new int[V];
-
-    for (int i=0; i<V; ++i)
+    parent = new int[V];
+    for (int i=0; i<V; ++i) {
         distance[i] = INT_MAX;
+        parent[i] = -1;
+    }
     distance[start] = 0;
 
     for (int c=0; c<V; ++c) {
         int u = minDistance(distance, visited);
         visited[u] = true;
         for (int v=0; v<V; ++v) {
-            if (!visited[v] && graph[u][v] && distance[u] + graph[u][v] < distance[v])
+            if (!visited[v] && graph[u][v] && distance[u] + graph[u][v] < distance[v]) {
                 distance[v] = distance[u] + graph[u][v];
+                parent[v] = u;
+            }
+
         }
     }
 
-    for (int i=0; i<V; ++i)
-        cout << distance[i] << ' ';
+    for (int i=0; i<V; ++i) {
+        printPath(parent, i);
+        cout << endl;
+    }
 
+    delete[] parent;
     delete[] visited;
     delete[] distance;
 }
