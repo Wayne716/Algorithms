@@ -12,7 +12,7 @@ public:
         int* dist = new int[V];
         for (int i=0; i<V; ++i)
             dist[i] = INT_MAX;
-        dist[0] = 0;
+        dist[src] = 0;
 
         for (int i=1; i<V; ++i) {
             for (int j=0; j<E; ++j) {
