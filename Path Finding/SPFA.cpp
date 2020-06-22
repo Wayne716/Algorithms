@@ -29,7 +29,6 @@ public:
                 int w = it.second;
                 if (dist[u] + w < dist[v]) {
                     dist[v] = dist[u] + w;
-                    int debug = dist[v];
                     if (!inQ[v]) {
                         Q.push(v);
                         inQ[v] = true;
